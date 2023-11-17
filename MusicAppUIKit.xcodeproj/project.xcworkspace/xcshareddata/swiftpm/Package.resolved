@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "snapkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SnapKit/SnapKit.git",
+      "state" : {
+        "revision" : "f222cbdf325885926566172f6f5f06af95473158",
+        "version" : "5.6.0"
+      }
+    },
+    {
+      "identity" : "uiview-borders-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/aaronn/UIView-Borders-Swift",
+      "state" : {
+        "revision" : "f7496f79c92134952cb692ad1faa147805f6048d",
+        "version" : "1.2.0"
+      }
+    }
+  ],
+  "version" : 2
+}
