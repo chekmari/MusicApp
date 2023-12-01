@@ -22,6 +22,7 @@ enum Resources {
         case navbarNewDropsTitle   = "navbar_new_drops_title"
         case navbarDiscoverTitle   = "navbar_discover_title"
         case navbarSearchTitle     = "navbar_search_title"
+        case searchtfPlaceholder   = "search_textfield_placeholder"
     }
     
     enum Fonts: String {

@@ -36,7 +36,7 @@ class Router: RouterProtocol, RouterMain {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         
         let tabBarController = UITabBarController()
-        tabBarController.tabBar.selectedItem?.title = nil
+      
         let newSongs = createNavViewController(
             viewController: newSongsVC,
             title: 
@@ -67,11 +67,13 @@ class Router: RouterProtocol, RouterMain {
             image: .tabBarSearch
         )
         
-    
-
-        
-        
-        tabBarController.viewControllers = [newSongs, discover, player, search]
+        tabBarController.viewControllers = [
+            newSongs,
+            discover,
+            player,
+            search
+        ]
+        tabBarController.tabBarItem.title = nil
         appDelegate.window?.rootViewController = tabBarController
     }
 
@@ -122,6 +124,12 @@ extension Router {
     private func createNavViewController(viewController: UIViewController, title: String, image: UIImage) -> UIViewController {
         let navController = UINavigationController(rootViewController: viewController)
         navController.tabBarItem.image = image
+        navController.tabBarItem.imageInsets = UIEdgeInsets(
+            top: 8,
+            left: 0,
+            bottom: -8,
+            right: 0
+        )
         viewController.navigationItem.title = title
         return navController
     }

@@ -27,7 +27,7 @@ class Builder: BuilderProtocol {
     }
     
     func createNewSongsModule(router: RouterProtocol) -> UIViewController {
-        let model = Model()
+        let model = MusicInfo()
         let view = NewDropsVC()
         let presenter = NewDropsPresenter(view: view, model: model, router: router)
         view.presenter = presenter

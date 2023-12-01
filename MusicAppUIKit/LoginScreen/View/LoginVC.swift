@@ -24,7 +24,6 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupUI()
     }
 }
@@ -45,7 +44,7 @@ private extension LoginVC {
         let w = UIScreen.main.bounds.width
         let h = UIScreen.main.bounds.height
         backgroundView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.top.left.right.bottom.equalToSuperview()
         }
         loginView.snp.makeConstraints {
             $0.left.right.equalToSuperview().inset(18)
@@ -60,6 +59,4 @@ extension LoginVC: LoginViewProtocol {
     func g() {
         
     }
-    
-    
 }

@@ -7,36 +7,85 @@
 
 import Foundation
 import UIKit
-import UIViewBordersSwift
 
 final class Factories {
+    enum NavigationController {
+        static func setupTabBar() {
+            UITabBar.appearance().unselectedItemTintColor = .navBarItem
+            UITabBar.appearance().tintColor = .navBarItemSelected
+            UITabBar.appearance().backgroundColor = .black
+            UITabBar.appearance().barTintColor = .black
+            UITabBar.appearance().isTranslucent = false
+        }
+        
+        static func setupNabigationBar() {
+            let largeFont = Resources.Fonts.interBold.size(40)
+            let font = Resources.Fonts.interSemiBold.size(18)
+            let attrLarge: [NSAttributedString.Key:Any] = [
+                .font: largeFont!,
+                .foregroundColor: UIColor.navBarTitle
+            ]
+            let attr: [NSAttributedString.Key:Any] = [
+                .font: font!,
+                .foregroundColor: UIColor.navBarTitle
+            ]
+            
+            UINavigationBar.appearance().prefersLargeTitles = true
+            UINavigationBar.appearance().titleTextAttributes = attr
+            UINavigationBar.appearance().largeTitleTextAttributes = attrLarge
+            UINavigationBar.appearance().barTintColor = .black
+        }
+    }
+    enum NavigationBar {
+        enum Buttons {
+            static func largeTitleViewRightBarButton(target: Any, action: Selector, event: UIControl.Event) -> UIButton {
+                let button = UIButton(type: .custom)
+                button.translatesAutoresizingMaskIntoConstraints = false
+                button.imageView?.tintColor = .navBarItem
+                button.setImage(.navBarAccount, for: .normal)
+                button.addTarget(target, action: action, for: event)
+                return button
+            }
+            
+            static func rightBarButtonItem(target: Any, action: Selector) -> UIBarButtonItem {
+                let barButtonItem = UIBarButtonItem(
+                    image: UIImage.navBarAccount,
+                    style: .plain,
+                    target: target,
+                    action: action
+                )
+                return barButtonItem
+            }
+        }
+    }
+    
     enum LoginScreen {
         enum Buttons {
             static func createSignButton(
                 with text: String.LocalizationValue,
-                background color: UIColor, 
+                background color: UIColor,
                 logo: UIImage,
                 placement: NSDirectionalRectEdge
             ) -> UIButton {
-                    let button = UIButton()
-                    var config = UIButton.Configuration.gray()
-                    config.baseBackgroundColor = color
-                    config.baseForegroundColor = .white
-                    config.image = logo
-                    config.imagePadding = 8
-                    config.background.cornerRadius = 4
-                    config.imagePlacement = placement
-                    config.title = String(localized: text)
-                    config.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
-                        var outgoing = incoming
-                        outgoing.font = UIFont(
-                            name: Resources.Fonts.interMedium.rawValue,
-                            size: 15
-                        )
-                        return outgoing
-                      }
-                    button.configuration = config
-                    return button
+                let button = UIButton()
+                var config = UIButton.Configuration.gray()
+                config.baseBackgroundColor = color
+                config.baseForegroundColor = .white
+                config.image = logo
+                config.imagePadding = 8
+                config.background.cornerRadius = 4
+                config.imagePlacement = placement
+                config.title = String(localized: text)
+                config.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
+                    var outgoing = incoming
+                    outgoing.font = UIFont(
+                        name: Resources.Fonts.interMedium.rawValue,
+                        size: 15
+                    )
+                    return outgoing
+                }
+                button.configuration = config
+                return button
             }
         }
         
@@ -155,7 +204,7 @@ final class Factories {
                 let notAMemberText = String(localized: Resources.LocaleStringKeys.notAMemberLabel.rawValue)
                 let fullText = "\(notAMemberText) \(createAccountText)"
                 let attributedString = NSMutableAttributedString(string: fullText)
-
+                
                 attributedString.addAttribute(
                     .foregroundColor,
                     value: UIColor.signInLoginTextfield.withAlphaComponent(0.6),
@@ -170,7 +219,7 @@ final class Factories {
                 ], range: NSRange(
                     location: notAMemberText.count + 1,
                     length: createAccountText.count
-                   )
+                )
                 )
                 
                 label.adjustsFontSizeToFitWidth = true
@@ -181,42 +230,48 @@ final class Factories {
         }
     }
     
-    enum NavigationBar {
+    enum NewDropsScreen {
         enum Buttons {
-            static func largeTitleViewRightBarButton(target: Any, action: Selector, event: UIControl.Event) -> UIButton {
-                let button = UIButton(type: .custom)
-                button.translatesAutoresizingMaskIntoConstraints = false
-                button.imageView?.tintColor = .navBarItem
-                button.setImage(.navBarAccount, for: .normal)
-                button.addTarget(target, action: action, for: event)
+            static func playButton() -> UIButton {
+                let button = UIButton()
+                button.setImage(.playButton, for: .normal)
                 return button
             }
-            
-            static func rightBarButtonItem(target: Any, action: Selector) -> UIBarButtonItem {
-                let barButtonItem = UIBarButtonItem(
-                    image: UIImage.navBarAccount,
-                    style: .plain,
-                    target: target,
-                    action: action
-                )
-                return barButtonItem
-            }
         }
-    }
-    
-    enum NewDropsScreen {
         
         enum Labels {
-            static func createLabel(textColor: UIColor, font: UIFont) -> UILabel {
+            static func createLabel(font: UIFont) -> UILabel {
                 let label = UILabel()
                 label.text = "Kendrick Lamar"
                 label.textAlignment = .left
                 label.numberOfLines = 1
                 label.font = font
-                label.textColor = textColor
+                label.textColor = .white
                 return label
             }
         }
+        
+        enum Images {
+            static func imageView() -> UIImageView {
+                let imageView = UIImageView()
+                imageView.contentMode = .scaleAspectFill
+                imageView.clipsToBounds = true
+                imageView.layer.maskedCorners = [
+                    .layerMinXMinYCorner,
+                    .layerMaxXMinYCorner
+                ]
+                imageView.layer.cornerRadius = 10
+                return imageView
+            }
+        }
+    }
+    enum DiscoverScreen {
+        static func s() {
+            
+        }
+    }
+    enum PlayerScreen {}
+    enum SearchScreen {
+        
     }
 }
-

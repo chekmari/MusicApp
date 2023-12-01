@@ -1,15 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "music.pdf",
+      "filename" : "not-found-newSongsCell-image.pdf",
       "idiom" : "universal"
     }
   ],
   "info" : {
     "author" : "xcode",
     "version" : 1
-  },
-  "properties" : {
-    "preserves-vector-representation" : true
   }
 }

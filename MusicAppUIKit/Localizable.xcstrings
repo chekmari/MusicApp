@@ -2,6 +2,7 @@
   "sourceLanguage" : "en",
   "strings" : {
     "create_an_account" : {
+      "comment" : "login_screen register",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -19,7 +20,7 @@
       }
     },
     "login_button" : {
-      "comment" : "login screen logIn button",
+      "comment" : "login_screen logIn button",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -37,7 +38,7 @@
       }
     },
     "login_textfield" : {
-      "comment" : "login screen login textfield",
+      "comment" : "login_screen login textfield",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -55,7 +56,7 @@
       }
     },
     "navbar_discover_title" : {
-      "comment" : "title nav bar for DiscoverVC",
+      "comment" : "discover_screen title nav bar ",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -73,7 +74,7 @@
       }
     },
     "navbar_new_drops_title" : {
-      "comment" : "title nav bar for NewDropsVC",
+      "comment" : "newDrops_screen title nav bar ",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -91,7 +92,7 @@
       }
     },
     "navbar_search_title" : {
-      "comment" : "title nav bar for SearchVC",
+      "comment" : "search_screen title nav bar for",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -109,6 +110,7 @@
       }
     },
     "not_a_member_label" : {
+      "comment" : "login_screen register",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -126,7 +128,7 @@
       }
     },
     "or_label_login_screen" : {
-      "comment" : "login screen or view",
+      "comment" : "login_screen or view",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -144,7 +146,7 @@
       }
     },
     "password_textfield" : {
-      "comment" : "login screen password textfield",
+      "comment" : "login_screen password textfield",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -161,8 +163,26 @@
         }
       }
     },
+    "search_textfield_placeholder" : {
+      "comment" : "search_screen search textfield placeholder",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Songs, Albums, Artists, Podcasts..."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Песни, Альбомы, Исполнители, Подкасты..."
+          }
+        }
+      }
+    },
     "sign_apple_button" : {
-      "comment" : "login screen apple button",
+      "comment" : "login_screen apple button",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -180,7 +200,7 @@
       }
     },
     "sign_google_button" : {
-      "comment" : "login screen google button",
+      "comment" : "login_screen google button",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {

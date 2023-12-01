@@ -1,11 +1,5 @@
-//
-//  LoginVIew.swift
-//  MusicAppUIKit
-//
-//  Created by macbook on 08.11.2023.
-//
-
 import UIKit
+//  LoginVIew.swift
 
 final class LoginView: UIView {
     var presenter: LoginViewPresenterProtocol?
@@ -119,11 +113,16 @@ extension LoginView {
 extension LoginView: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-
+        
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-
+        
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 
